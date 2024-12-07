@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos Malú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#F8B6C1', // Rosa claro
+            background: '#FDEDF0', // Fondo pastel
+            detail: '#FAD1DC', // Detalles
+            contrast: '#E58E9F', // Contraste
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Fondo dinámico */
+    body {
+      background: linear-gradient(120deg, #f8f8f8, #f8e1e4);
+      background-size: 200% 200%;
+      animation: gradient-shift 10s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Animación del marco */
+    @keyframes frame-draw {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .animate-frame {
+      animation: frame-draw 2s ease-in-out forwards;
+    }
+  </style>
+</head>
+<body class="text-contrast font-serif">
+<!-- Inicio -->
+<section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center relative p-4">
+  <div class="absolute inset-x-0 top-10 flex justify-center">
+    <img src="/assets/logo.png" alt="Logo Eventos Malú" class="w-48 h-48 object-scale-down rounded-full">
+  </div>
+  <div class="relative mt-20 p-6 border-2 border-detail rounded-full w-full max-w-sm md:max-w-lg animate-frame">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">Bienvenidos a Eventos Malú</h1>
+    <p class="text-sm md:text-base lg:text-lg">
+      Transformamos tus sueños en realidad para cualquier ocasión especial: bodas, bautizos, cumpleaños y más.
+    </p>
+  </div>
+  <div class="absolute bottom-20 animate-bounce">
+    <p class="text-sm md:text-base">Desplázate hacia abajo</p>
+    <span>⬇️</span>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="min-h-screen flex flex-col justify-center items-center bg-white p-8 relative">
+  <h2 class="text-4xl font-semibold text-center mb-4">Nuestros Servicios</h2>
+  <p class="text-lg text-center text-contrast mb-8">
+    Descubre todo lo que podemos ofrecer para hacer de tu evento un momento inolvidable.
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+    <!-- Tarjetas -->
+    <div class="bg-background rounded-lg shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-2">
+      <img src="/assets/galeria/bautizo.jpg" alt="Bautizos" class="w-20 h-20 mx-auto mb-4 rounded-full">
+      <h3 class="text-xl font-bold text-primary mb-2 text-center">Bautizos</h3>
+      <p class="text-sm text-center">Decoraciones angelicales y elegantes para ese día especial.</p>
+    </div>
+    <div class="bg-background rounded-lg shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-2">
+      <img src="/assets/galeria/xd.jpg" alt="Bodas" class="w-20 h-20 mx-auto mb-4 rounded-full">
+      <h3 class="text-xl font-bold text-primary mb-2 text-center">Bodas</h3>
+      <p class="text-sm text-center">Transformamos tu sueño en una realidad inolvidable.</p>
+    </div>
+    <div class="bg-background rounded-lg shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-2">
+      <img src="/assets/galeria/cumpleanos.jpeg" alt="Cumpleaños Infantiles" class="w-20 h-20 mx-auto mb-4 rounded-full">
+      <h3 class="text-xl font-bold text-primary mb-2 text-center">Cumpleaños Infantiles</h3>
+      <p class="text-sm text-center">Diseños temáticos y coloridos para los pequeños.</p>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- Sección de Galería -->
+  <section id="galeria" class="min-h-screen flex flex-col justify-center items-center bg-background p-8 relative">
+    <h2 class="text-4xl font-semibold text-center mb-8">Galería</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <!-- Imagen 1 -->
+      <a href="/assets/galeria/decoracion1.jpg" target="_blank">
+        <img src="/assets/galeria/decoracion1.jpg" alt="Decoración 1" class="w-full rounded-lg shadow-lg hover:scale-105 transition transform">
+      </a>
+      <!-- Imagen 2 -->
+      <a href="/assets/galeria/decoracion2.jpg" target="_blank">
+        <img src="/assets/galeria/decoracion2.jpg" alt="Decoración 2" class="w-full rounded-lg shadow-lg hover:scale-105 transition transform">
+      </a>
+      <!-- Imagen 3 -->
+      <a href="/assets/galeria/decoracion3.jpg" target="_blank">
+        <img src="/assets/galeria/decoracion3.jpg" alt="Decoración 3" class="w-full rounded-lg shadow-lg hover:scale-105 transition transform">
+      </a>
+    </div>
+  </section>
+  
+
+    <!-- Sección de Contacto -->
+
+  <section id="contacto" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-primary to-contrast text-white text-center p-8 relative">
+    <!-- Separador Decorativo -->
+    <div class="absolute top-0 left-0 w-full h-8 bg-white rounded-b-full shadow-md"></div>
+  
+    <h2 class="text-4xl font-bold mb-6">Contáctanos</h2>
+    <p class="text-lg mb-8">Haz tu consulta o agenda tu evento fácilmente.</p>
+  
+    <!-- Botones de Contacto -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+      <a href="https://wa.me/593123456789" class="bg-white text-primary px-6 py-3 rounded-full shadow-lg hover:bg-detail hover:text-white transition">
+        📱 WhatsApp
+      </a>
+      <a href="#" class="bg-white text-primary px-6 py-3 rounded-full shadow-lg hover:bg-detail hover:text-white transition">
+        📷 Instagram
+      </a>
+      <a href="#" class="bg-white text-primary px-6 py-3 rounded-full shadow-lg hover:bg-detail hover:text-white transition">
+        👍 Facebook
+      </a>
+      <a href="mailto:eventosmalu@example.com" class="bg-white text-primary px-6 py-3 rounded-full shadow-lg hover:bg-detail hover:text-white transition">
+        📧 Correo
+      </a>
+    </div>
+  
+    <!-- Información Extra -->
+    <div class="mt-8">
+      <p class="text-lg">📞 Teléfono: +593 123 456 789</p>
+      <p class="text-lg">✉️ Correo: eventosmalu@example.com</p>
+    </div>
+  </section>
+  
+
+  
+  
+
+<!-- Menú Lateral -->
+<div class="fixed bottom-8 right-8 space-y-4 z-30">
+  <a href="#inicio" class="bg-primary text-white p-4 rounded-full shadow-lg hover:bg-detail transition">🏠</a>
+  <a href="#servicios" class="bg-primary text-white p-4 rounded-full shadow-lg hover:bg-detail transition">📋</a>
+  <a href="#galeria" class="bg-primary text-white p-4 rounded-full shadow-lg hover:bg-detail transition">🖼️</a>
+  <a href="#contacto" class="bg-primary text-white p-4 rounded-full shadow-lg hover:bg-detail transition">📞</a>
+</div>
+
+  <!-- Decoraciones de Fondo -->
+  <div class="absolute inset-0 -z-10">
+    <!-- Mariposas -->
+    <img src="/assets/ballon.png" alt="Mariposa" class="absolute top-0 left-0 w-32 opacity-20">
+    <img src="/assets/ballon.png" alt="Mariposa" class="absolute bottom-10 right-10 w-40 opacity-20">
+  </div>
+  
+</body>
+</html>
